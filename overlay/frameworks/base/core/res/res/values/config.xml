@@ -156,4 +156,14 @@
          carrier provisioning. If false: hard disabled. If true: then depends on carrier
          provisioning, availability etc -->
     <bool name="config_carrier_wfc_ims_available">true</bool>
+
+    <!-- Flag indicating which package name can access the persistent data partition -->
+    <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
+
+    <!-- Control whether Night display is available. This should only be enabled on devices
+           with HWC 2.0 or higher. -->
+    <bool name="config_nightDisplayAvailable">false</bool>
+
+    <!-- Enable doze powersaving mode -->
+    <bool name="config_enableAutoPowerModes">true</bool>
 </resources>
