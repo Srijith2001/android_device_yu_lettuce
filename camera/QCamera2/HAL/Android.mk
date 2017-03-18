@@ -59,21 +59,12 @@ LOCAL_C_INCLUDES += \
 
 LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
-LOCAL_SHARED_LIBRARIES := \
-    libbinder \
-    libcamera_client \
-    liblog \
-    libhardware \
-    libutils \
-    libcutils \
-    libdl \
-    libsensor
-
-LOCAL_SHARED_LIBRARIES += \
-    libmmcamera_interface \
-    libmmjpeg_interface \
-    libqdMetaData \
-    libqservice
+LOCAL_SHARED_LIBRARIES := libcamera_client liblog libhardware libutils libcutils libdl libsensor
+LOCAL_SHARED_LIBRARIES += libmmcamera_interface libmmjpeg_interface libqdMetaData
+ifeq ($(TARGET_TS_MAKEUP),true)
+LOCAL_SHARED_LIBRARIES += libts_face_beautify_hal libts_detected_face_hal
+endif
+LOCAL_SHARED_LIBRARIES += libqdMetaData libqservice libbinder
 
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_MODULE := camera.msm8916
