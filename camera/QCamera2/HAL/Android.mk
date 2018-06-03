@@ -45,6 +45,8 @@ LOCAL_C_INCLUDES := \
     $(call project-path-for,qcom-display)/libqdutils \
     $(call project-path-for,qcom-display)/libqservice \
     $(call project-path-for,qcom-media)/libstagefrighthw \
+  	frameworks/native/libs/nativewindow/include \
+    frameworks/native/libs/arect \
     system/media/camera/include \
     $(LOCAL_PATH)/../../mm-image-codec/qexif \
     $(LOCAL_PATH)/../../mm-image-codec/qomx_core \
@@ -58,6 +60,9 @@ LOCAL_C_INCLUDES += \
     $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/media
 
 LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
+
+LOCAL_STATIC_LIBRARIES := libarect
+LOCAL_HEADER_LIBRARIES := libnativebase_headers
 
 LOCAL_SHARED_LIBRARIES := libcamera_client liblog libhardware libutils libcutils libdl libsensor
 LOCAL_SHARED_LIBRARIES += libmmcamera_interface libmmjpeg_interface libqdMetaData
